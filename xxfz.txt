@@ -1,0 +1,37 @@
+#香香腐宅
+^https:\/\/boylove3\.cc\/bookimages\/Uploads\/img\/20220422 url reject-dict
+
+^https:\/\/boylove3\.cc\/bookimages\/img\/20230310 url reject-dict
+
+^https:\/\/boylove3\.cc\/bookimages\/img\/20230305 url reject-dict
+
+^https:\/\/boylove3\.cc\/bookimages\/img\/20230224 url reject-dict
+
+^https:\/\/boylove3\.cc\/bookimages\/img\/20230320 url reject-dict
+
+^https:\/\/app-measurement\.com\/a url reject-dict
+
+^https:\/\/s3t3d2y8\.afcdn\.net\/library\/803856 url reject-dict
+
+^https:\/\/blcnimghost2\.cc\/bookimages\/Uploads\/img\/20220422 url reject-dict
+
+^https:\/\/blcnimghost2\.cc\/Public\/Uploads\/img url reject-dict
+
+^https:\/\/blcnimghost2\.cc\/bookimages\/img\/20230317 url reject-dict
+
+^https:\/\/blcnimghost2\.cc\/bookimages\/img\/20230224 url reject-dict
+
+^https:\/\/blcnimghost2\.cc\/bookimages\/img\/20230320 url reject-dict
+
+^https:\/\/blcnimghost2\.cc\/bookimages\/img\/20230305 url reject-dict
+
+^https:\/\/boylove3\.cc\/bookimages\/Uploads\/img\/20210614 url reject-dict
+
+^https:\/\/boylove3\.cc\/bookimages\/img\/20230320 url reject-dict
+
+^https:\/\/syndication\.realsrv\.com\/v1\/api url reject-dict
+
+^https:\/\/syndication\.realsrv\.com\/cimp\.php\?t=api&data url reject-dict
+
+^https:\/\/boylove3\.cc\/bookimages\/img\/20230317 url reject-dict
+hostname = xxfblappapi.cc, syndication.realsrv.com, blcnimghost2.cc, s3t3d2y8.afcdn.net, app-measurement.com, boylove3.cc,
