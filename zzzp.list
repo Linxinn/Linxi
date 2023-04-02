@@ -1,4 +1,4 @@
-# > JS更新时间:2023.04.02
+# 更新时间:2023.04.03
 #蜘蛛纸牌去广告
 host, inappcheck.itunes.apple.com, reject
 host-suffix, ios.bugly.qq.com, reject
