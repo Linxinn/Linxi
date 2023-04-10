@@ -1,3 +1,5 @@
+# 针对部分网站显示IP归属地的分流规则
+#更新时间：2023.04.10
 #哔哩哔哩
 DOMAIN-SUFFIX,biliapi.net,IP
 DOMAIN,api.bilibili.com,IP
@@ -15,7 +17,6 @@ DOMAIN-SUFFIX,im9.com,IP
 DOMAIN-SUFFIX,acg.tv,IP
 DOMAIN-SUFFIX,biligame.com,IP
 IP-CIDR,203.107.1.0/24,REJECT
-
 
 #网易云音乐
 DOMAIN-SUFFIX,music.163.com,IP
@@ -44,17 +45,16 @@ IP-CIDR,59.111.19.33/32,IP
 IP-CIDR,59.111.19.53/32,IP
 
 #微博
-
 DOMAIN-SUFFIX,weibo.cn,IP
 DOMAIN-SUFFIX,weibo.com,IP
 DOMAIN-SUFFIX,weibocdn.com,IP
 DOMAIN-KEYWORD,weibo,IP
 
 #微信
-域名，szshort.weixin.qq.com，IP
-域名，szextshort.weixin.qq.com，IP
-域名，szminorshort.weixin.qq.com，IP
-域名，mp.weixin.qq.com，IP
+DOMAIN,szshort.weixin.qq.com,IP
+DOMAIN,szextshort.weixin.qq.com,IP
+DOMAIN,szminorshort.weixin.qq.com,IP
+DOMAIN,mp.weixin.qq.com,IP
 
 #抖音
 #需要家宽IP才可生效
