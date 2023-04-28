@@ -91,10 +91,29 @@ if (url.includes("/x/resource/show/skin")) {
       obj.data.live_tip = "";
       obj.data.answer = "";
       // 开启本地会员标识
-     
+      if (obj.data.vip.status === 1) {
+        return false;
+      } else {
+        obj.data.vip_type = 0;
+        obj.data.vip.type = 0;
+        obj.data.vip.status = 0;
+        obj.data.vip.vip_pay_type = 0;
+        obj.data.vip.due_date = 0; // Unix 时间戳 2040-01-01 00:00:00
+        obj.data.vip.role = 0;
+      }
+    });
+  }
 } else if (url.includes("/x/v2/account/myinfo")) {
   // 会员清晰度
- 
+ if (obj.data.vip.status === 1) {
+    $done({});
+  } else {
+    obj.data.vip.type = 0;
+    obj.data.vip.status = 0;
+    obj.data.vip.vip_pay_type = 0;
+    obj.data.vip.due_date = 0;
+    obj.data.vip.role = 0;
+  }
 } else if (url.includes("/x/v2/feed/index?")) {
   // 推荐广告
   if (obj.data?.items) {
