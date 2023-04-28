@@ -1,10 +1,58 @@
+// 2023-04-25 15:35
 
-/*
-‼️规则完全免费，仅供学习交流，🈲️商业用途
-*/
-var body = $response.body;
-var url = $request.url;
-var obj = JSON.parse(body);
+const url = $request.url;
+if (!$response.body) $done({});
+let obj = JSON.parse($response.body);
+
+// 强制设置的皮肤
+if (url.includes("/x/resource/show/skin")) {
+  if (obj.data?.common_equip) {
+    delete obj.data.common_equip;
+  }
+} else if (url.includes("/x/resource/show/tab/v2")) {
+  // 标签页
+  if (obj.data.tab) {
+    obj.data.tab = obj.data.tab.filter(
+      (item) =>
+        item.name === "推荐" ||
+        item.name === "热门" ||
+        item.name === "动画" ||
+        item.name === "影视"
+    );
+    fixPos(obj.data.tab);
+  }
+  if (obj.data.top) {
+    obj.data.top = [
+      {
+        id: 176,
+        icon: "http://i0.hdslb.com/bfs/archive/d43047538e72c9ed8fd8e4e34415fbe3a4f632cb.png",
+        tab_id: "消息Top",
+        name: "消息",
+        uri: "bilibili://link/im_home",
+        pos: 1
+      }
+    ];
+  }
+  if (obj.data.bottom) {
+    obj.data.bottom = obj.data.bottom.filter(
+      (item) =>
+        !(
+          item.name === "发布" ||
+          item.name === "会员购" ||
+          item.name === "節目"
+        )
+    );
+    fixPos(obj.data.bottom);
+  }
+} else if (url.includes("/x/resource/top/activity")) {
+  // 右上角活动入口
+  obj = {
+    code: -404,
+    message: "啥都木有",
+    ttl: 1,
+    data: null
+  };
+} else if (url.includes("/x/v2/account/mine")) {
   // 我的页面
   // 标准版：
   // 396离线缓存 397历史记录 398我的收藏 399稍后再看 171个性装扮 172我的钱包 407联系客服 410设置
@@ -40,5 +88,140 @@ var obj = JSON.parse(body);
       obj.data.vip_section = "";
       obj.data.live_tip = "";
       obj.data.answer = "";
+   
+
+  // 推荐广告
+  if (obj.data?.items) {
+    obj.data.items = obj.data.items.filter((i) => {
+      const { card_type: cardType, card_goto: cardGoto } = i;
+      if (cardType && cardGoto) {
+        if (cardType === "banner_v8" && cardGoto === "banner") {
+          // 去除判断条件 首页横版内容全部去掉
+          // if (i.banner_item) {
+          // for (const v of i.banner_item) {
+          //   if (v.type) {
+          //     if (v.type === "ad") return false;
+          //   }
+          // }
+          // return false;
+          // }
+          return false;
+          // ad_av 创作推广广告
+          // ad_inline_3d 上方大的视频3d广告
+          // ad_inline_eggs 上方大的视频广告
+          // ad_player 大视频广告
+          // ad_web_gif 大gif广告
+          // ad_web_s 普通小广告
+        } else if (
+          cardType === "cm_v2" &&
+          [
+            "ad_av",
+            "ad_inline_3d",
+            "ad_inline_eggs",
+            "ad_player",
+            "ad_web_gif",
+            "ad_web_s"
+          ].includes(cardGoto)
+        ) {
+          return false;
+          // 游戏广告
+        } else if (cardType === "small_cover_v10" && cardGoto === "game") {
+          return false;
+          // 创作推广-大视频广告
+        } else if (
+          cardType === "cm_double_v9" &&
+          cardGoto === "ad_inline_av"
+        ) {
+          return false;
+        }
+      }
+      return true;
+    });
+  }
+} else if (url.includes("/x/v2/feed/index/story")) {
+  if (obj.data?.items) {
+    // vertical_live 直播内容
+    // vertical_pgc 大会员专享
+    obj.data.items = obj.data.items.filter(
+      (i) => !(
+        i.hasOwnProperty("ad_info") ||
+        ["ad", "vertical_live", "vertical_pgc"].includes(i.card_goto)
+      )
+    );
+  }
+} else if (url.includes("/x/v2/search/square")) {
+  // 热搜广告
+  if (obj.data) {
+    obj.data = {
+      type: "history",
+      title: "搜索历史",
+      search_hotword_revision: 2
+    };
+  }
+} else if (url.includes("/x/v2/splash")) {
+  // 开屏广告
+  const item = ["account", "event_list", "preload", "show"];
+  if (obj.data) {
+    item.forEach((i) => {
+      delete obj.data[i];
+    });
+    if (obj.data.max_time) {
+      obj.data.max_time = 0;
+    }
+    if (obj.data.min_interval) {
+      obj.data.min_interval = 31536000;
+    }
+    if (obj.data.pull_interval) {
+      obj.data.pull_interval = 31536000;
+    }
+    if (obj.data.list) {
+      for (let i of obj.data.list) {
+        i.duration = 0;
+        i.enable_pre_download = false;
+        i.end_time = 2209046399; // Unix 时间戳 2040-01-01 23:59:59
+        i.begin_time = 2208960000; // Unix 时间戳 2040-01-01 00:00:00
+      }
+    }
+  }
+} else if (
+  url.includes("/pgc/page/bangumi") ||
+  url.includes("/pgc/page/cinema/tab")
+) {
+  // 观影页广告
+  if (obj.result?.modules) {
+    obj.result.modules.forEach((i) => {
+      if (i.style.startsWith("banner")) {
+        i.items = i.items.filter((ii) => ii.link.includes("play"));
+      } else if (i.style.startsWith("function")) {
+        i.items = i.items.filter((ii) => ii.blink.startsWith("bilibili"));
+      } else if ([241, 1283, 1284, 1441].includes(i.module_id)) {
+        i.items = [];
+      } else if (i.style.startsWith("tip")) {
+        i.items = [];
+      }
+    });
+  }
+} else if (url.includes("/xlive/app-room/v1/index/getInfoByRoom")) {
+  // 直播广告
+  if (obj.data?.activity_banner_info) {
+    obj.data.activity_banner_info = null;
+  }
+  if (obj.data?.shopping_info) {
+    obj.data.shopping_info = {
+      is_show: 0
+    };
+  }
+  if (obj.data?.new_tab_info?.outer_list?.length > 0) {
+    obj.data.new_tab_info.outer_list =
+      obj.data.new_tab_info.outer_list.filter((i) => i.biz_id !== 33);
+  }
 }
-$done({body});
+
+$done({ body: JSON.stringify(obj) });
+
+// 修复pos
+function fixPos(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].pos = i + 1;
+  }
+}
