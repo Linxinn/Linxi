@@ -232,9 +232,4 @@ if (url.includes("/x/resource/show/skin")) {
 
 $done({ body: JSON.stringify(obj) });
 
-// 修复pos
-function fixPos(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    arr[i].pos = i + 1;
-  }
 }
