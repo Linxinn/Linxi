@@ -88,20 +88,7 @@ if (url.includes("/x/resource/show/skin")) {
       obj.data.vip_section = "";
       obj.data.live_tip = "";
       obj.data.answer = "";
-      // 开启本地会员标识
-      if (obj.data.vip.status === 1) {
-        return false;
-      } else {
-        obj.data.vip_type = 2;
-        obj.data.vip.type = 2;
-        obj.data.vip.status = 1;
-        obj.data.vip.vip_pay_type = 1;
-        obj.data.vip.due_date = 2208960000; // Unix 时间戳 2040-01-01 00:00:00
-        obj.data.vip.role = 3;
-      }
-    });
-  }
-} else if (url.includes("/x/v2/account/myinfo")) {
+     
  
   // 推荐广告
   if (obj.data?.items) {
