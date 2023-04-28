@@ -105,7 +105,6 @@ if (url.includes("/x/resource/show/skin")) {
   // 会员清晰度
 
   
-} else if (url.includes("/x/v2/feed/index?")) {
   // 推荐广告
   if (obj.data?.items) {
     obj.data.items = obj.data.items.filter((i) => {
