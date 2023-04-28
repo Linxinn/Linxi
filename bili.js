@@ -141,15 +141,7 @@ if (url.includes("/x/resource/show/skin")) {
 } else if (url.includes("/x/v2/feed/index/story")) {
   if (obj.data?.items) {
     // vertical_live 直播内容
-    // vertical_pgc 大会员专享
-    obj.data.items = obj.data.items.filter(
-      (i) => !(
-        i.hasOwnProperty("ad_info") ||
-        ["ad", "vertical_live", "vertical_pgc"].includes(i.card_goto)
-      )
-    );
-  }
-} else if (url.includes("/x/v2/search/square")) {
+   
   // 热搜广告
   if (obj.data) {
     obj.data = {
