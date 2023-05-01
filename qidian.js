@@ -1,3 +1,4 @@
+#作者：app2smile，原链接：https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js
 let url = $request.url;
 let method = $request.method;
 if (!$response.body) {
