@@ -87,9 +87,9 @@ if (!lk.isExecComm) {
             ],
             "keys": [boylove3CookieKey]
         }, {
-            "script_url": "https://github.com/lowking/Scripts/blob/master/hifini/hifiniSign.js",
-            "author": "@lowking",
-            "repo": "https://github.com/lowking/Scripts",
+            "script_url": "https://raw.githubusercontent.com/lx051/QuantumultX/main/js/1234.js",
+            "author": "林夕",
+            "repo": "https://github.com/051/QuantumultX",
         })
         all()
     }
