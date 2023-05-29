@@ -1,6 +1,7 @@
 /****************************************
-  * 原地址https://raw.githubusercontent.com/Keywos/rule/main/JS/cnyusd.js
- * 监控汇率变化, 自用改了下通知格式 2023-05-30
+ * 改里拉
+ * 原地址https://raw.githubusercontent.com/Keywos/rule/main/JS/cnyusd.js
+ * 监控汇率变化, 自用改了下通知格式 2023-05-28
  * @author: Peng-YM
  * @Alter: chxm1023
  * 更新地址：https://raw.githubusercontent.com/chxm1023/Task/main/hljk.js
@@ -22,8 +23,8 @@ const currencyNames = {
     CNY: ["人民币", "🇨🇳"],
     USD: ["美元", "🇺🇸"],
     //HKD: ["港币", "🇭🇰"],
-    //JPY: ["日元", "🇯🇵"],
-    //KRW: ["韩元", "🇰🇷"],
+    JPY: ["日元", "🇯🇵"],
+    KRW: ["韩元", "🇰🇷"],
     TRY: ["土耳其里拉", "🇹🇷"],
 };
 //.toString().padEnd(8, " ")
