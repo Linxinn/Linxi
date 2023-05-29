@@ -21,9 +21,9 @@ const $ = API("exchange");
 const currencyNames = {
     CNY: ["人民币", "🇨🇳"],
     USD: ["美元", "🇺🇸"],
-    HKD: ["港币", "🇭🇰"],
-    JPY: ["日元", "🇯🇵"],
-    KRW: ["韩元", "🇰🇷"],
+    //HKD: ["港币", "🇭🇰"],
+    //JPY: ["日元", "🇯🇵"],
+    //KRW: ["韩元", "🇰🇷"],
     TRY: ["土耳其里拉", "🇹🇷"],
 };
 //.toString().padEnd(8, " ")
