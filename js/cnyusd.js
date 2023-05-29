@@ -1,5 +1,5 @@
 /****************************************
- * 改里拉
+ * 改里拉，时间：2023-05-30
  * 原地址https://raw.githubusercontent.com/Keywos/rule/main/JS/cnyusd.js
  * 监控汇率变化, 自用改了下通知格式 2023-05-28
  * @author: Peng-YM
