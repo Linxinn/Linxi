@@ -1,4 +1,4 @@
-
+待看
 const lk = new ToolKit(`boylove3签到`, `boylove3SignIn`)
 const boylove3CookieKey = 'lkboylove3CookieKey'
 const boylove3IsTakeTheFirst = 'lkboylove3IsTakeTheFirst'
