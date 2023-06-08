@@ -1,5 +1,5 @@
 #[rewrite_local]
-^https:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-request-header xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
+^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-request-header xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
 ^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-response-body xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
