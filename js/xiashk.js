@@ -1,43 +1,43 @@
 [rewrite_local]
-^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-request-header xiashk.js
+^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-request-header xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-response-body xiashk.js
+^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-response-body xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/xiashk\.com\/addressx5 url script-request-header xiashk.js
+^https?:\/\/xiashk\.com\/addressx5 url script-request-header xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/xiashk\.com\/addressx5 url script-response-body xiashk.js
+^https?:\/\/xiashk\.com\/addressx5 url script-response-body xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.153\.65\.5\/addressx5\/index\.html url script-request-header xiashk.js
+^https?:\/\/43\.153\.65\.5\/addressx5\/index\.html url script-request-header xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-https?:\/\/43\.153\.65\.5\/addressx5\/index\.html url script-response-body xiashk.js
+https?:\/\/43\.153\.65\.5\/addressx5\/index\.html url script-response-body xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-request-header xiashk.js
+^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-request-header xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-response-body xiashk.js
+^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-response-body xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/xsserve\.com\/addressx5 url script-request-header xiashk.js
+^https?:\/\/xsserve\.com\/addressx5 url script-request-header xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/xsserve\.com\/addressx5 url script-response-body xiashk.js
+^https?:\/\/xsserve\.com\/addressx5 url script-response-body xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.153\.98\.179\/addressx5\/index\.html url script-request-header xiashk.js
+^https?:\/\/43\.153\.98\.179\/addressx5\/index\.html url script-request-header xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.153\.98\.179\/addressx5\/index\.html url script-response-body xiashk.js
+^https?:\/\/43\.153\.98\.179\/addressx5\/index\.html url script-response-body xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-request-header xiashk.js
+^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-request-header xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-response-body xiashk.js
+^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-response-body xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.153\.8\.115\/addressx5\/index\.html url script-request-header xiashk.js
+^https?:\/\/43\.153\.8\.115\/addressx5\/index\.html url script-request-header xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.153\.8\.115\/addressx5\/index\.html url script-response-body xiashk.js
+^https?:\/\/43\.153\.8\.115\/addressx5\/index\.html url script-response-body xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.153\.8\.115\/addressx5\/index\.html url script-request-header xiashk.js
+^https?:\/\/43\.153\.8\.115\/addressx5\/index\.html url script-request-header xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.153\.8\.115\/addressx5\/index\.html url script-response-body xiashk.js
+^https?:\/\/43\.153\.8\.115\/addressx5\/index\.html url script-response-body xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url url script-request-header xiashk.js
+^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url url script-request-header xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
-^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-response-body xiashk.js
+^https?:\/\/43\.133\.187\.238\/addressx5\/index\.html url script-response-body xiashk.js https://raw.githubusercontent.com/lx051/QuantumultX/main/js/xiashk.js
 
 #[mitm]
 #hostname =
