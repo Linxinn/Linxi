@@ -1,3 +1,19 @@
+/*
+boylove3.cc签到-lowking-v1.0
+
+按下面配置完之后，打开https://boylove3.cc/home/signup获取cookie
+
+************************
+Surge 4.2.0+ 脚本配置(其他APP自行转换配置):
+************************
+[Script]
+# > hifini签到
+hifini签到cookie = type=http-request,pattern=https:\/\/boylove3.cc\/home\signup,script-path=https://raw.githubusercontent.com/lx051/QuantumultX/main/js/boylove3Sign.js
+hifini签到 = type=cron,cronexp="0 10 0 * * ?",wake-system=1,script-path=https://raw.githubusercontent.com/lx051/QuantumultX/main/js/boylove3Sign.js
+
+[MITM]
+hostname = %APPEND% *.boylove3.cc
+*/
 const lk = new ToolKit(`boylove3签到`, `Boylove3SignIn`)
 
 const boylove3CookieKey = 'lkBoylove3CookieKey'
@@ -64,7 +80,7 @@ if (!lk.isExecComm) {
 
 function getCookie() {
 
-    if (lk.isGetCookie(/\/home.signup/)) {
+    if (lk.isGetCookie(/\/home\signup/)) {
 
         if ($request.headers.hasOwnProperty('Cookie')) {
 
