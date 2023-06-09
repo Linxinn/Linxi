@@ -48,11 +48,11 @@ if (!lk.isExecComm) {
 
         }, {
 
-            "script_url": "https://github.com/lowking/Scripts/blob/master/boylove3/boylove3Sign.js",
+            "script_url": "https://github.com/lx051/QuantumultX/main/js/boylove3Sign.js",
 
-            "author": "@lowking",
+            "author": "@lx051",
 
-            "repo": "https://github.com/lowking/Scripts",
+            "repo": "https://github.com/lx051/QuantumultX",
 
         })
 
