@@ -64,7 +64,7 @@ if (!lk.isExecComm) {
 
 function getCookie() {
 
-    if (lk.isGetCookie(/\/my.htm/)) {
+    if (lk.isGetCookie(/\/home.signup/)) {
 
         if ($request.headers.hasOwnProperty('Cookie')) {
 
@@ -114,7 +114,7 @@ function signIn() {
 
         let url = {
 
-            url: 'https://www.boylove3.cc/sg_sign.htm',
+            url: 'https://boylove3.cc/home/signup',
 
             headers: {
 
