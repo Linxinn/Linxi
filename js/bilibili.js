@@ -1,4 +1,4 @@
-// 2023-05-19 14:48
+// 2023-06-11 12:38
 
 const url = $request.url;
 if (!$response.body) $done({});
@@ -37,7 +37,6 @@ if (url.includes("/x/resource/show/skin")) {
     obj.data.bottom = obj.data.bottom.filter(
       (item) =>
         !(
-          item.name === "动态"||
           item.name === "发布" ||
           item.name === "会员购" ||
           item.name === "節目"
@@ -53,7 +52,7 @@ if (url.includes("/x/resource/show/skin")) {
     ttl: 1,
     data: null
   };
-} else if (url.includes("/x/v2/account/mine")) {
+} else if (url.includes("/x/v2/account/mine?")) {
   // 我的页面
   // 标准版：
   // 396离线缓存 397历史记录 398我的收藏 399稍后再看 171个性装扮 172我的钱包 407联系客服 410设置
@@ -66,7 +65,7 @@ if (url.includes("/x/resource/show/skin")) {
   // 494离线缓存 495历史记录 496我的收藏 497稍后再看 741我的钱包 742稿件管理 500联系客服 501设置
   // 622为会员购中心 425开始为概念版id
   const itemList = new Set([
-    396, 397, 398, 399, 407, 410, 494, 495, 496, 497, 501
+    396, 397, 398, 399, 407, 410, 494, 495, 496, 497, 500, 501
   ]);
   if (obj.data?.sections_v2) {
     obj.data.sections_v2.forEach((element, index) => {
@@ -89,29 +88,29 @@ if (url.includes("/x/resource/show/skin")) {
       obj.data.vip_section = "";
       obj.data.live_tip = "";
       obj.data.answer = "";
-      // 开启本地会员标识
-      if (obj.data.vip.status === 1) {
-        return false;
-      } else {
-        obj.data.vip_type = 2;
-        obj.data.vip.type = 2;
-        obj.data.vip.status = 1;
-        obj.data.vip.vip_pay_type = 1;
-        obj.data.vip.due_date = 2208960000; // Unix 时间戳 2040-01-01 00:00:00
-        obj.data.vip.role = 3;
-      }
-    });
+
+  }
+} else if (url.includes("/x/v2/account/mine/ipad")) {
+  if (obj.data?.ipad_upper_sections) {
+    // 投稿 创作首页 稿件管理 有奖活动
+    delete obj.data.ipad_upper_sections;
+  }
+  if (obj.data?.ipad_recommend_sections) {
+    // 789我的关注 790我的消息 791我的钱包 792直播中心 793大会员 794我的课程 2542我的游戏
+    const itemList = [789, 790];
+    obj.data.ipad_recommend_sections = obj.data.ipad_recommend_sections.filter(
+      (i) => itemList.includes(i.id)
+    );
+  }
+  if (obj.data?.ipad_more_sections) {
+    // 797我的客服 798设置 1070青少年守护
+    const itemList = [797, 798];
+    obj.data.ipad_more_sections = obj.data.ipad_more_sections.filter((i) =>
+      itemList.includes(i.id)
+    );
   }
 } else if (url.includes("/x/v2/account/myinfo")) {
-  // 会员清晰度
-  if (obj.data.vip.status === 1) {
-    $done({});
-  } else {
-    obj.data.vip.type = 2;
-    obj.data.vip.status = 1;
-    obj.data.vip.vip_pay_type = 1;
-    obj.data.vip.due_date = 2208960000; // Unix 时间戳 2040-01-01 00:00:00
-    obj.data.vip.role = 3;
+
   }
 } else if (url.includes("/x/v2/feed/index?")) {
   // 推荐广告
@@ -119,7 +118,7 @@ if (url.includes("/x/resource/show/skin")) {
     obj.data.items = obj.data.items.filter((i) => {
       const { card_type: cardType, card_goto: cardGoto } = i;
       if (cardType && cardGoto) {
-        if (cardType === "banner_v8" && cardGoto === "banner") {
+        if (cardType.includes("banner") && cardGoto.includes("banner")) {
           // 去除判断条件 首页横版内容全部去掉
           // if (i.banner_item) {
           // for (const v of i.banner_item) {
@@ -131,7 +130,7 @@ if (url.includes("/x/resource/show/skin")) {
           // }
           return false;
         } else if (
-          cardType === "cm_v2" &&
+          ["cm_v1", "cm_v2"].includes(cardType) &&
           [
             "ad_av",
             "ad_inline_3d",
@@ -197,8 +196,8 @@ if (url.includes("/x/resource/show/skin")) {
       for (let i of obj.data.list) {
         i.duration = 0;
         i.enable_pre_download = false;
-        i.end_time = 2209046399; // Unix 时间戳 2040-01-01 23:59:59
-        i.begin_time = 2208960000; // Unix 时间戳 2040-01-01 00:00:00
+        i.end_time = 0; // Unix 时间戳 2040-01-01 23:59:59
+        i.begin_time = 0; // Unix 时间戳 2040-01-01 00:00:00
       }
     }
   }
