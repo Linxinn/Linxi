@@ -1,5 +1,5 @@
 #!author = Linxinn
-#!update = 2023-07-06 14:22.45
+#!update = 2023-07-06 15:41.45
 
 # > 移除 哔哩哔哩动态
 const url = $request.url;
