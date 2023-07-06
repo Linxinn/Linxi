@@ -1,6 +1,8 @@
 
+#!author = Linxinn
+#!update = 2023-07-06 14:22.45
 
-# > 移除 国际版 动态 
+# > 移除 哔哩哔哩国际版 动态 
 
 const url = $request.url;
 if (!$response.body) $done({});
