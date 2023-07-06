@@ -37,7 +37,6 @@ if (url.includes("/x/resource/show/skin")) {
     obj.data.bottom = obj.data.bottom.filter(
       (item) =>
         !(
-||
           item.name === "发布" ||
           item.name === "会员购" ||
           item.name === "節目"
@@ -66,7 +65,7 @@ if (url.includes("/x/resource/show/skin")) {
   // 494离线缓存 495历史记录 496我的收藏 497稍后再看 741我的钱包 742稿件管理 500联系客服 501设置
   // 622为会员购中心 425开始为概念版id
   const itemList = new Set([
-    396, 397, 398, 399,410, 494, 495, 496, 497,501
+    396, 397, 398, 399, 410, 494, 495, 496, 497, 501
   ]);
   if (obj.data?.sections_v2) {
     obj.data.sections_v2.forEach((element, index) => {
