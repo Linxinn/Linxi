@@ -41,8 +41,6 @@ if (url.includes("/x/resource/show/skin")) {
           item.name === "发布" ||
           item.name === "会员购" ||
           item.name === "節目"
-          item.name === "节目"
-          item.name === "动态" 
         )
     );
     fixPos(obj.data.bottom);
