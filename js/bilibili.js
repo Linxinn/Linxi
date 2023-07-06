@@ -37,7 +37,6 @@ if (url.includes("/x/resource/show/skin")) {
     obj.data.bottom = obj.data.bottom.filter(
       (item) =>
         !(
-          item.name === "动态" ||
           item.name === "发布" ||
           item.name === "会员购" ||
           item.name === "節目"
