@@ -37,6 +37,7 @@ if (url.includes("/x/resource/show/skin")) {
     obj.data.bottom = obj.data.bottom.filter(
       (item) =>
         !(
+          item.name === "动态" ||
           item.name === "发布" ||
           item.name === "会员购" ||
           item.name === "節目"
@@ -88,7 +89,18 @@ if (url.includes("/x/resource/show/skin")) {
       obj.data.vip_section = "";
       obj.data.live_tip = "";
       obj.data.answer = "";
-
+      // 开启本地会员标识
+      if (obj.data.vip.status === 1) {
+        return false;
+      } else {
+        obj.data.vip_type = 2;
+        obj.data.vip.type = 2;
+        obj.data.vip.status = 1;
+        obj.data.vip.vip_pay_type = 1;
+        obj.data.vip.due_date = 2208960000; // Unix 时间戳 2040-01-01 00:00:00
+        obj.data.vip.role = 3;
+      }
+    });
   }
 } else if (url.includes("/x/v2/account/mine/ipad")) {
   if (obj.data?.ipad_upper_sections) {
@@ -110,7 +122,15 @@ if (url.includes("/x/resource/show/skin")) {
     );
   }
 } else if (url.includes("/x/v2/account/myinfo")) {
-
+  // 会员清晰度
+  if (obj.data.vip.status === 1) {
+    $done({});
+  } else {
+    obj.data.vip.type = 2;
+    obj.data.vip.status = 1;
+    obj.data.vip.vip_pay_type = 1;
+    obj.data.vip.due_date = 2208960000; // Unix 时间戳 2040-01-01 00:00:00
+    obj.data.vip.role = 3;
   }
 } else if (url.includes("/x/v2/feed/index?")) {
   // 推荐广告
@@ -196,8 +216,8 @@ if (url.includes("/x/resource/show/skin")) {
       for (let i of obj.data.list) {
         i.duration = 0;
         i.enable_pre_download = false;
-        i.end_time = 0; // Unix 时间戳 2040-01-01 23:59:59
-        i.begin_time = 0; // Unix 时间戳 2040-01-01 00:00:00
+        i.end_time = 2209046399; // Unix 时间戳 2040-01-01 23:59:59
+        i.begin_time = 2208960000; // Unix 时间戳 2040-01-01 00:00:00
       }
     }
   }
