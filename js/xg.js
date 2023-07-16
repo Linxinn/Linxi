@@ -18,21 +18,17 @@ guding.data = [{
       "name" : "个人版",
       "endTime" : 1881706768000,
       //"code" : "27ec293bae7f4c3eac915db11fde22df"
+    }];
     
-    {"name" : "应用安全锁",
+    [{"name" : "应用安全锁",
       "expiration" : 1881706768000,
-      "code" : "SecurityLock"
-    },
-    {
-      "name" : "隐文风格",
+      "code" : "SecurityLock"},
+    {"name" : "隐文风格",
       "expiration" : 1881706768000,
-      "code" : "Cryptic"
-    },
-    {
-      "name" : "更换图标",
+      "code" : "Cryptic"},
+    {"name" : "更换图标",
       "expiration" : 1881706768000,
-      "code" : "ChangeIcon"
-    },
+      "code" : "ChangeIcon"},
     {
       "name" : "文件加密",
       "expiration" : 1881706768000,
