@@ -19,5 +19,4 @@ guding.data = [{
       "endTime" : 1881706768000,
       //"code" : "27ec293bae7f4c3eac915db11fde22df"
     }];
-
 $done({ body: JSON.stringify(guding) });
