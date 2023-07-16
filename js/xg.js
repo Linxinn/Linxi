@@ -13,8 +13,8 @@ hostname = api.boyasec.com
 
 //**************************************
 
-var guding = JSON.parse($response.body);
-guding.data = [{
+var linxi = JSON.parse($response.body);
+linxi.data = [{
       "name" : "个人版",
       "endTime" : 1881706768000,
       //"code" : "27ec293bae7f4c3eac915db11fde22df"
@@ -82,4 +82,4 @@ guding.data = [{
     }
   ];
 
-$done({ body: JSON.stringify(guding) });
+$done({ body: JSON.stringify(linxi) });
