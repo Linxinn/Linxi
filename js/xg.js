@@ -2,6 +2,7 @@
 脚本作者：林夕
 使用声明：⚠️仅供参考，🈲转载与售卖！
 
+**************************************
 
 [rewrite_local]
 ^https?:\/\/api\.boyasec\.com\/ime\/user\/rights-plan\/list url script-response-body https://raw.githubusercontent.com/Linxinn/Linxi/blob/main/js/xg.js
@@ -9,6 +10,8 @@
 
 [mitm]
 hostname = api.boyasec.com
+
+**************************************
 
 var guding = JSON.parse($response.body);
 guding.data = [{
