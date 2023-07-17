@@ -13,8 +13,8 @@ hostname = yimutodo.com
 
 
 
-var linxi = JSON.parse($response.body);
-linxi.data = {
+var obj = JSON.parse($response.body);
+obj.data = {
     "memberType" : "PERMANENT",
     "totalStore" :10485746725,
     "avatar" : "https://raw.githubusercontent.com/lx051/QuantumultX/main/icon/hyj.JPG",
@@ -28,7 +28,7 @@ linxi.projectList = [{
       "memberExpiredTime": 1881706768000,
     },
   }];
-$done({body: JSON.stringify(linxi)});
+$done({body: JSON.stringify(obj)});
  //"totalStore"这个是存储云空间，
 //20GB=2117632
 //1000GB=1048609678
