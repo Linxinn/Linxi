@@ -28,7 +28,7 @@ obj.projectList = [{
       "memberExpiredTime": 1881706768000,
     },
   }];
-$done({body: JSON.stringify(obj)});
+$done({body : JSON.stringify(obj)});
  //"totalStore"这个是存储云空间，
 //20GB=2117632
 //1000GB=1048609678
