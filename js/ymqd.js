@@ -11,10 +11,10 @@
 //[mitm]
 hostname = yimutodo.com
 
-//************************************************************/
+************************************************************/
 
-var obj = JSON.parse($response.body);
-obj.data = {
+var linxi = JSON.parse($response.body);
+linxi.data = {
     "memberType" : "PERMANENT",
     "totalStore" :10485746725,
     "avatar" : "https://raw.githubusercontent.com/lx051/QuantumultX/main/icon/hyj.JPG",
@@ -22,13 +22,13 @@ obj.data = {
     "nickName" : "林夕",
   //"memberExpiredTime": 1881706768000
 };
-obj.projectList = [{
+linxi.projectList = [{
     "creator": {
       "memberType": "PERMANENT",
       "memberExpiredTime": 1881706768000,
     },
   }];
-$done({body : JSON.stringify(obj)});
+$done({ body: JSON.stringify(linxi) });
  //"totalStore"这个是存储云空间，
 //20GB=2117632
 //1000GB=1048609678
