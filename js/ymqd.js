@@ -22,7 +22,7 @@ obj.data = {
     "nickName" : "林夕",
   //"memberExpiredTime": 1881706768000
 };
-linxi.projectList = [{
+obj.projectList = [{
     "creator": {
       "memberType": "PERMANENT",
       "memberExpiredTime": 1881706768000,
