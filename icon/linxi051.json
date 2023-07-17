@@ -2,9 +2,15 @@
   "name": "林夕自用",
   "description": "收集一些自己常用的图标",
   "icons": [
-    {
-      "name": "kuwo1",
-      "url": "https://raw.githubusercontent.com/lx051/QuantumultX/main/icon/apps/kuwo2.png"
-    }
-  ]
-}
+    {"name": "kuwo1",
+      "url": "https://raw.githubusercontent.com/lx051/QuantumultX/main/icon/hyj.JPG"},
+    
+    {"name": "kuwo1",
+      "url": "https://raw.githubusercontent.com/lx051/QuantumultX/main/icon/zql.JPG"},
+    
+    {"name": "kuwo1",
+      "url": "https://raw.githubusercontent.com/lx051/QuantumultX/main/icon/tz.JPG"},
+    
+    {"name": "kuwo1",
+      "url": "https://raw.githubusercontent.com/lx051/QuantumultX/main/icon/srmy.JPG"}
+  ]}
