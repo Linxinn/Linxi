@@ -5,7 +5,7 @@
 //使用说明：非一次性解锁，要一直开着
 
 
-#[rewrite_local]
+//[rewrite_local]
 ^https:\/\/yimutodo\.com\/api\/v\/mtop url script-response-body https://raw.githubusercontent.com/Linxinn/Linxi/main/js/ymqd.js
 
 //[mitm]
