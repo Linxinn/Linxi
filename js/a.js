@@ -1,8 +1,10 @@
 	/*
 	
 APTV：https://apps.apple.com/app/id1630403500
+
 [rewrite_local]
 ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) url script-response-body https://raw.githubusercontent.com/Linxinn/Linxi/main/js/a.js
+
 ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) url script-request https://raw.githubusercontent.com/Linxinn/Linxi/main/js/a.js
 
 [MITM]
